@@ -4,6 +4,7 @@
 
 require('dotenv').config();
 const mongoose = require('mongoose');
+const server = require('./src/app.js');
 
 
 const mongooseOptions = {
@@ -13,4 +14,4 @@ const mongooseOptions = {
 };
 
 mongoose.connect(process.env.MONGODB_URI, mongooseOptions);
-ServiceWorkerRegistration.start();
+server.start(); 
