@@ -4,13 +4,13 @@
 
 const express = require('express');
 
-const authRouter = express.Router(); 
+const router = express.Router(); 
 
 const User = require('../model/user/schema.js');
 
 const auth = require('../middleware/auth.js');
 
-authRouter.post('/signup', (request, response, next) => {
+router.post('/signup', (request, response, next) => {
   const user = new User(request.body);
   user.save()
     // eslint-disable-next-line no-shadow
@@ -25,10 +25,10 @@ authRouter.post('/signup', (request, response, next) => {
 });
 
 // modifying the response object 
-authRouter.post('/signin', auth(), (request, response) => {
+router.post('/signin', auth(), (request, response) => {
   response.set('token', request.token);
   response.cookie('auth', request.token);
   response.send(request.token);
 });
 
-module.exports = authRouter; 
+module.exports = router; 
