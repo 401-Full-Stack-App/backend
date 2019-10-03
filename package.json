@@ -9,7 +9,8 @@
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint src --ext .js --fix",
     "start": "nodemon index.js",
-    "start:db": "mkdir -p data/db && mongod --dbpath fullstackapp"
+    "start:db": "mkdir -p data/db && mongod --dbpath fullstackapp",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
   },
   "keywords": [],
   "author": "",
