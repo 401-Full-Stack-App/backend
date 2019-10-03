@@ -17,7 +17,7 @@ const user = mongoose.Schema({
 const capabilities = {
   admin: ['create', 'read', 'update', 'delete'],
   editor: ['create', 'read', 'update'],
-  user: ['create', 'read', 'update'],
+  user: ['create', 'read'],
 };
 
 // pre-hooks (what considerations whne making changes?)
